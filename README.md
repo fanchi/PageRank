@@ -1,7 +1,7 @@
 # PageRank
 Given an initial page rank (weight) and transition matrix, it iteratively updates the page rank based on the previous page rank and transition matrix.  
 #### Formula:  
-$PageRank_{n} = (1-\beta) * PageRank_{n-1} * TransitionMatrix + \beta * PageRank_{n-1}$  
+PageRank(n) = (1-beta) * PageRank(n-1) * TransitionMatrix + beta * PageRank(n-1),    
 where beta is a teleporting factor to avoid dead ends (all page ranks become 0) or spider traps (page rank dominated by one page). It is implemented on Hadoop by two MapReduce jobs - unitMultiplication and unitSum.  
 #### To run:
 1. *Create directory for the transition matrix on HDFS*  
@@ -17,10 +17,9 @@ where beta is a teleporting factor to avoid dead ends (all page ranks become 0) 
 6. *Pack classes to jar*  
 `jar cf pr.jar *.class`  
 7. *Run*  
-`hadoop jar pr.jar Driver /transition /pagerank /output 40 0.2  
+`hadoop jar pr.jar Driver /transition /pagerank /output 40 0.2'
 //args0: dir of transition.txt  
 //args1: dir of pagerank*.txt  
 //args2: output dir of the first MapReduce job  
 //args3: number of iterations  
 //args4: beta
-`
