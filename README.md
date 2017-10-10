@@ -23,4 +23,5 @@ where beta is a teleporting factor to avoid dead ends (all page ranks become 0) 
 //args1: dir of pagerank*.txt  
 //args2: output dir of the first MapReduce job  
 //args3: number of iterations  
-//args4: beta
+//args4: beta  
+Source of test data: https://www.limfinity.com/ir/
